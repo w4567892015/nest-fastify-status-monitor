@@ -33,15 +33,15 @@ export class StatusMonitorController {
       socketPath: '',
       bodyClasses: bodyClasses,
       script: fs.readFileSync(
-        path.join(__dirname, '../src/public/javascripts/app.js'),
+        path.join(__dirname, './public/javascripts/app.js'),
       ),
       style: fs.readFileSync(
-        path.join(__dirname, '../src/public/stylesheets/style.css'),
+        path.join(__dirname, './public/stylesheets/style.css'),
       ),
     };
 
     const htmlTmpl = fs
-      .readFileSync(path.join(__dirname, '../src/public/index.html'))
+      .readFileSync(path.join(__dirname, './public/index.html'))
       .toString();
 
     this.render = Handlebars.compile(htmlTmpl, { strict: true });

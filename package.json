@@ -55,6 +55,7 @@
     "@nestjs/platform-socket.io": "^10.3.8",
     "@nestjs/websockets": "^10.3.8",
     "axios": "^0.19.2",
+    "copyfiles": "^2.4.1",
     "debug": "^2.6.8",
     "event-loop-stats": "^1.4.1",
     "handlebars": "4.7.3",
@@ -67,9 +68,10 @@
   },
   "scripts": {
     "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/public/* src/public/**/* ./dist",
     "watch": "tsc -w",
-    "build": "tsc",
-    "prepack": "tsc",
+    "build": "yarn clean && tsc && yarn copy-files",
+    "prepack": "yarn clean && tsc && yarn copy-files",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage"
   },
