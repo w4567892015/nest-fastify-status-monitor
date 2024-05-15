@@ -1,6 +1,6 @@
 {
   "name": "@viewsonic-mvb/nest-fastify-status-monitor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Realtime Monitoring for Fastify-based Node applications",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
