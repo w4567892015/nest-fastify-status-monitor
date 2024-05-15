@@ -69,6 +69,7 @@
     "clean": "rimraf dist/",
     "watch": "tsc -w",
     "build": "tsc",
+    "prepack": "tsc",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage"
   },
