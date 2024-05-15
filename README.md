@@ -1,6 +1,7 @@
 # nest-fastify-status-monitor
 
 [![NPM](https://nodei.co/npm/@viewsonic-mvb/nest-fastify-status-monitor.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/@viewsonic-mvb/nest-fastify-status-monitor/)
+
 [![nest-status-monitor on npm](https://img.shields.io/npm/v/@viewsonic-mvb/nest-fastify-status-monitor.svg)](https://www.npmjs.com/package/@viewsonic-mvb/nest-fastify-status-monitor) ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Simple, self-hosted module based on Socket.io and Chart.js to report realtime
