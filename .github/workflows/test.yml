@@ -1,0 +1,38 @@
+name: test
+
+on:
+  workflow_call:
+  push:
+    branches:
+      - ci-test
+      - master
+      - develop
+      - 'dev/*'
+      - 'feature/*'
+      - 'fix/*'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 20.x]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Build package
+        run: yarn build

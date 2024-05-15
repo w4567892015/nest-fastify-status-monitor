@@ -10,7 +10,7 @@ server metrics for Nest.js based node servers.
 
 ## Installation & setup Nest.js v6
 
-1. Run `npm install nest-status-monitor --save`
+1. Run `npm install @viewsonic-mvb/nest-fastify-status-monitor --save`
 2. Setup module:
 
 ```javascript
@@ -62,7 +62,7 @@ Default config:
     mem: true,
     load: true,
     heap: true,
-    eventLoop: false,
+    eventLoop: true,
     responseTime: true,
     rps: true,
     statusCodes: true,

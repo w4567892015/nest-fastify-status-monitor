@@ -1,5 +1,5 @@
 {
-  "name": "nest-fastify-status-monitor",
+  "name": "@viewsonic-mvb/nest-fastify-status-monitor",
   "version": "0.0.1",
   "description": "Realtime Monitoring for Fastify-based Node applications",
   "main": "dist/index.js",
@@ -67,7 +67,7 @@
   "scripts": {
     "clean": "rimraf dist/",
     "watch": "tsc -w",
-    "build": "rm -rf ./dist && tsc --declaration",
+    "build": "tsc",
     "test": "jest --passWithNoTests",
     "test:coverage": "jest --coverage"
   },

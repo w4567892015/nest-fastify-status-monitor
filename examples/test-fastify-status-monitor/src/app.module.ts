@@ -33,7 +33,7 @@ const statusMonitorConfig: StatusMonitorConfiguration = {
     mem: true,
     load: true,
     heap: true,
-    eventLoop: false,
+    eventLoop: true,
     responseTime: true,
     rps: true,
     statusCodes: true,
