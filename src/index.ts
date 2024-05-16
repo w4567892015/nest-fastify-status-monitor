@@ -5,8 +5,8 @@ import { HealthCheckConfiguration } from './config/health.check.configuration';
 import { SpansConfiguration } from './config/spans.configuration';
 
 export {
-  StatusMonitorModule,
-  StatusMonitorConfiguration,
+  StatusMonitorModule as WebStatusMonitorModule,
+  StatusMonitorConfiguration as WebStatusMonitorConfiguration,
   ChartVisibilityConfiguration,
   HealthCheckConfiguration,
   SpansConfiguration,

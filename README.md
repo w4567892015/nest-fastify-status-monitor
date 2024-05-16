@@ -10,14 +10,23 @@ server metrics for Nest.js based node servers.
 ![Status monitor page](https://i.imgur.com/AkZEPYG.gif 'Status monitor page')
 
 
-## Installation & setup Nest.js v6
+## Installation & setup default config
 
 1. Run `npm install @viewsonic-mvb/nest-fastify-status-monitor --save`
 2. Setup module:
 
-```javascript
+``` ts
+import {
+  WebStatusMonitorModule,
+  WebStatusMonitorConfiguration,
+} from '@viewsonic-mvb/nest-fastify-status-monitor';
+
 @Module({
-  imports: [StatusMonitorModule.setUp(statusMonitorConfig)],
+  imports: [WebStatusMonitorModule.setUp()],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
 ```
 
 3. Run server and go to `/status`
@@ -37,7 +46,7 @@ module.
 
 Default config:
 
-```javascript
+```ts
 {
   pageTitle: 'Nest.js Monitoring Page',
   port: 3001,
@@ -70,6 +79,24 @@ Default config:
     statusCodes: true,
   },
 }
+```
+
+## Health Checks
+
+You can add a series of health checks to the configuration that will appear
+below the other stats. The health check will be considered successful if the
+endpoint returns a 200 status code.
+
+``` ts
+// config
+healthChecks: [
+  {
+    protocol: 'http',
+    host: 'localhost',
+    path: '/health',
+    port: 3000,
+  }
+];
 ```
 
 ## License

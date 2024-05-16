@@ -1,8 +1,12 @@
-const configuration = {
-  title: 'Express Status',
-  theme: 'default.css',
+import { StatusMonitorConfiguration } from './config/status.monitor.configuration';
+
+const configuration: StatusMonitorConfiguration = {
+  pageTitle: 'Nest.js Monitoring Page',
+  port: 3001,
   path: '/status',
   socketPath: '/socket.io',
+  ignoreStartsWith: '/admin',
+  healthChecks: [],
   spans: [
     {
       interval: 1,
@@ -17,9 +21,6 @@ const configuration = {
       retention: 60,
     },
   ],
-  port: null,
-  websocket: null,
-  iframe: false,
   chartVisibility: {
     cpu: true,
     mem: true,
@@ -30,8 +31,6 @@ const configuration = {
     rps: true,
     statusCodes: true,
   },
-  ignoreStartsWith: '/admin',
-  healthChecks: [],
 };
 
 export default configuration;

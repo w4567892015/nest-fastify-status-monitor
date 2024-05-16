@@ -2,15 +2,25 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { StatusMonitorModule, StatusMonitorConfiguration } from '../../../dist';
+import {
+  WebStatusMonitorModule,
+  WebStatusMonitorConfiguration,
+} from '../../../dist';
 
-const statusMonitorConfig: StatusMonitorConfiguration = {
+const webStatusMonitorConfig: WebStatusMonitorConfiguration = {
   pageTitle: 'Nest.js Monitoring Page',
   port: 3001,
   path: '/status',
   socketPath: '/socket.io',
   ignoreStartsWith: '/admin',
-  healthChecks: [],
+  healthChecks: [
+    {
+      protocol: 'http',
+      host: 'localhost',
+      path: '/',
+      port: 3000,
+    },
+  ],
   spans: [
     {
       interval: 1, // Every second
@@ -38,7 +48,7 @@ const statusMonitorConfig: StatusMonitorConfiguration = {
 };
 
 @Module({
-  imports: [StatusMonitorModule.setUp(statusMonitorConfig)],
+  imports: [WebStatusMonitorModule.setUp(webStatusMonitorConfig)],
   controllers: [AppController],
   providers: [AppService],
 })
