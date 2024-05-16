@@ -2,10 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import {
-  StatusMonitorModule,
-  StatusMonitorConfiguration,
-} from '../../../dist/index';
+import { StatusMonitorModule, StatusMonitorConfiguration } from '../../../dist';
 
 const statusMonitorConfig: StatusMonitorConfiguration = {
   pageTitle: 'Nest.js Monitoring Page',
