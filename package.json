@@ -57,7 +57,7 @@
   "dependencies": {
     "@nestjs/platform-socket.io": "^10.3.8",
     "@nestjs/websockets": "^10.3.8",
-    "axios": "^0.19.2",
+    "axios": "^1.11.0",
     "debug": "^2.6.8",
     "event-loop-stats": "^1.4.1",
     "handlebars": "4.7.3",
